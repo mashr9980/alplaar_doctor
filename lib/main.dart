@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:contactus/contactus.dart';
-import 'Rivew.dart';
+import 'Review.dart';
 
 void main() {
   runApp(SplashScreen());
@@ -105,269 +105,275 @@ class MyApp extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Column(
-                children: [
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Container(
-                    height: 55,
-                    width: size.width * 0.97,
-                    child: RaisedButton(
-                      onPressed: () {},
-                      color: Color.fromRGBO(216,53,99,1),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Icon(
-                            Icons.attach_money_sharp,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: size.width * 0.05,
-                          ),
-                          Text(
-                            'In Progress: Rs. 10,000',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
+              CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          height: 55,
+                          width: size.width * 0.97,
+                          child: RaisedButton(
+                            onPressed: () {},
+                            color: Color.fromRGBO(216,53,99,1),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.attach_money_sharp,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: size.width * 0.05,
+                                ),
+                                Text(
+                                  'In Progress: Rs. 10,000',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                        ],
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
+                        ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        Container(
+                          width: size.width * 0.97,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(Icons.search),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                hintText: 'Search'
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        Container(
+                          width: size.width * 0.97,
+                          decoration: BoxDecoration(
+                          ),
+                          child: RaisedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context, MaterialPageRoute(builder: (context) => Review()));
+                            },
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      children: [
+                                        CircleAvatar(
+                                          child: Image.asset('images/aashir.png',),radius: 25,
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text('Ali Muhammad',style: TextStyle(fontSize: 18),),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text('4125465465465'),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        Text('Tue 12 Feb, 6:00pm',style: TextStyle(fontSize: 14, color: Colors.pink.withOpacity(0.8)),),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Divider(
+                                  color: Colors.grey,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      children: [
+                                        CircleAvatar(
+                                          child: Image.asset('images/aashir.png',),radius: 10,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: size.width * 0.05,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(' Forwarded by: Ali Khan Askeri • 2 Days ago',style: TextStyle(fontSize: 14),),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Divider(
+                                  color: Colors.grey,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      children: [
+                                        Icon(
+                                          Icons.attach_money_sharp,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: size.width * 0.05,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text('Rs. 1,500',style: TextStyle(fontSize: 18),),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        Container(
+                          width: size.width * 0.97,
+                          decoration: BoxDecoration(
+                          ),
+                          child: RaisedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context, MaterialPageRoute(builder: (context) => Review()));
+                            },
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      children: [
+                                        CircleAvatar(
+                                          child: Image.asset('images/aashir.png',),radius: 25,
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text('Ali Muhammad',style: TextStyle(fontSize: 18),),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text('4125465465465'),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        Text('Tue 12 Feb, 6:00pm',style: TextStyle(fontSize: 14, color: Colors.pink.withOpacity(0.8)),),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Divider(
+                                  color: Colors.grey,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      children: [
+                                        CircleAvatar(
+                                          child: Image.asset('images/aashir.png',),radius: 10,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: size.width * 0.05,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(' Forwarded by: Ali Khan Askeri • 2 Days ago',style: TextStyle(fontSize: 14),),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Divider(
+                                  color: Colors.grey,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Column(
+                                      children: [
+                                        Icon(
+                                          Icons.attach_money_sharp,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: size.width * 0.05,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text('Rs. 1,500',style: TextStyle(fontSize: 18),),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                    width: size.width * 0.97,
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          hintText: 'Search'
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                    width: size.width * 0.97,
-                    decoration: BoxDecoration(
-                    ),
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => Review()));
-                      },
-                      color: Colors.white,
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Column(
-                                children: [
-                                  CircleAvatar(
-                                    child: Image.asset('images/aashir.png',),radius: 25,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text('Ali Muhammad',style: TextStyle(fontSize: 18),),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text('4125465465465'),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text('Tue 12 Feb, 6:00pm',style: TextStyle(fontSize: 14, color: Colors.pink.withOpacity(0.8)),),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: Colors.grey,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Column(
-                                children: [
-                                  CircleAvatar(
-                                    child: Image.asset('images/aashir.png',),radius: 10,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: size.width * 0.05,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(' Forwarded by: Ali Khan Askeri • 2 Days ago',style: TextStyle(fontSize: 14),),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: Colors.grey,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Column(
-                                children: [
-                                  Icon(
-                                    Icons.attach_money_sharp,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: size.width * 0.05,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text('Rs. 1,500',style: TextStyle(fontSize: 18),),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Container(
-                    width: size.width * 0.97,
-                    decoration: BoxDecoration(
-                    ),
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => Review()));
-                      },
-                      color: Colors.white,
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Column(
-                                children: [
-                                  CircleAvatar(
-                                    child: Image.asset('images/aashir.png',),radius: 25,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text('Ali Muhammad',style: TextStyle(fontSize: 18),),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text('4125465465465'),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text('Tue 12 Feb, 6:00pm',style: TextStyle(fontSize: 14, color: Colors.pink.withOpacity(0.8)),),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: Colors.grey,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Column(
-                                children: [
-                                  CircleAvatar(
-                                    child: Image.asset('images/aashir.png',),radius: 10,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: size.width * 0.05,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(' Forwarded by: Ali Khan Askeri • 2 Days ago',style: TextStyle(fontSize: 14),),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: Colors.grey,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Column(
-                                children: [
-                                  Icon(
-                                    Icons.attach_money_sharp,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: size.width * 0.05,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text('Rs. 1,500',style: TextStyle(fontSize: 18),),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                  ),
+                  )
                 ],
               ),
               CustomScrollView(
@@ -387,7 +393,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
