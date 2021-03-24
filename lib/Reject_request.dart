@@ -1,7 +1,4 @@
-import 'package:alplaar1/Verification.dart';
 import 'package:flutter/material.dart';
-import 'package:group_radio_button/group_radio_button.dart';
-import 'package:alplaar1/Consultation.dart';
 import 'package:alplaar1/Request_rejected.dart';
 
 class Reject_request extends StatefulWidget {
